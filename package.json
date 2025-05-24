@@ -4,15 +4,13 @@
   "description": "RainbowCoreBot with TheoryCraft and SteamLink modules",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js",
-  "deploy": "node deploy.js"
-}
-
-    "start": "node index.js"
+    "start": "node index.js",
+    "deploy": "node deploy.js"
   },
   "dependencies": {
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
-    "openai": "^4.68.1",
+    "openai": "^4.18.0",
     "node-fetch": "^2.6.1"
   }
+}
