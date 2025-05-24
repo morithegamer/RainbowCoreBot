@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { loadTheories, getTopTheories } = require('../utils/database');
+const path = require('path');
+const { saveTheory } = require(path.join(__dirname, '../../utils/database'));
+
 
 / /theorymeme (Generate a meme description)
 module.exports.theorymeme = {
