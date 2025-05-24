@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { generateTheory } = require('../utils/theoryGenerator');
+const path = require('path');
+const generator = require(path.join(__dirname, '../../utils/theoryGenerator'));
 const { saveTheory } = require('../utils/database');
 
 module.exports = {
