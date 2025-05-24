@@ -4,6 +4,10 @@
   "description": "RainbowCoreBot with TheoryCraft and SteamLink modules",
   "main": "index.js",
   "scripts": {
+  "start": "node index.js",
+  "deploy": "node deploy.js"
+}
+
     "start": "node index.js"
   },
   "dependencies": {
