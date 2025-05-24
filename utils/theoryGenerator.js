@@ -1,4 +1,4 @@
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require('openai');
 require('dotenv').config();
 
 const database = {
@@ -10,8 +10,9 @@ const database = {
   platforms: ['Napster', 'Kazaa', 'Geocities', 'LimeWire'],
 };
 
-const configuration = new Configuration({ apiKey: process.env.OPENAI_API_KEY });
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
 
 async function generateTheory(topic, era, genre) {
   const trope = database.tropes[Math.floor(Math.random() * database.tropes.length)];
@@ -26,7 +27,7 @@ async function generateTheory(topic, era, genre) {
 
   if (process.env.OPENAI_API_KEY) {
     try {
-      const response = await openai.createChatCompletion({
+      const response = await openai.chat.completions.create({
         model: 'gpt-4',
         messages: [
           { role: 'system', content: 'You are a 2000s conspiracy theorist. Generate a 300-word SpongeBob cartoon theory about Docker and NASA set in [era], genre [genre]. Include a lost media artifact, a political science experiment, and a 2000s internet vibe.' },
@@ -34,7 +35,7 @@ async function generateTheory(topic, era, genre) {
         ],
         max_tokens: 400,
       });
-      theoryText = response.data.choices[0].message.content;
+      theoryText = response.choices[0].message.content;
     } catch (error) {
       console.log('OpenAI API error, using template:', error);
     }
@@ -51,5 +52,8 @@ function generateTitle(genre) {
   };
   return titles[genre][Math.floor(Math.random() * titles[genre].length)];
 }
+
+module.exports = { generateTheory };
+
 
 module.exports = { generateTheory };
