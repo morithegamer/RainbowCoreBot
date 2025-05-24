@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { loadTheories, getTopTheories } = require('../utils/database');
+const path = require('path');
+const { saveTheory } = require(path.join(__dirname, '../../utils/database'));
 
 // /theorysave (Save a theory to a vault channel)
 module.exports.theorysave = {
