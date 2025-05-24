@@ -3,7 +3,7 @@ const path = require('path');
 const { saveTheory } = require(path.join(__dirname, '../../utils/database'));
 
 
-/ /theorymeme (Generate a meme description)
+// /theorymeme (Generate a meme description)
 module.exports.theorymeme = {
   data: new SlashCommandBuilder()
     .setName('theorymeme')
