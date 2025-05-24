@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { loadTheories, getTopTheories } = require('../utils/database');
+const path = require('path');
+const { saveTheory } = require(path.join(__dirname, '../../utils/database'));
 
 
 // /theoryartifact (Generate a fake artifact)
