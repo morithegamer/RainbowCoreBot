@@ -1,0 +1,15 @@
+{
+  "name": "rainbowcorebot",
+  "version": "1.0.0",
+  "description": "RainbowCoreBot with TheoryCraft and SteamLink modules",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "openai": "^4.68.1",
+    "node-fetch": "^2.6.1"
+  }
+}
